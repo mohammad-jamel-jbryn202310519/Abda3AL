@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  weight: ["300", "400", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Abda3AL - Next.js & Supabase",
-  description: "A powerful web platform built with Next.js and Supabase.",
+  title: "شركة إبداع الخليج للخدمات الطلابية",
+  description: "الوكيل المعتمد لجميع الجامعات في المملكة الأردنية الهاشمية.",
 };
 
 export default function RootLayout({
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={inter.className}>
+    <html lang="ar" dir="rtl" className={cairo.className}>
       <body>{children}</body>
     </html>
   );

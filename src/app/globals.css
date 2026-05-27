@@ -161,3 +161,30 @@ h1, h2, h3, h4, h5, h6 {
 
 .delay-1 { animation-delay: 0.2s; opacity: 0; }
 .delay-2 { animation-delay: 0.4s; opacity: 0; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .main-content {
+    padding: 2rem 0;
+  }
+}

@@ -13,8 +13,7 @@ export default function Sidebar() {
         
         {/* Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none' }}>
-          {/* We generated a golden SVG logo */}
-          <img src="/logo.svg" alt="شعار إبداع الخليج" style={{ height: '50px', objectFit: 'contain' }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+          <img src="/logo.svg" alt="شعار إبداع الخليج" style={{ height: '60px', width: '60px', objectFit: 'contain' }} />
           <h1 className="text-gradient" style={{ fontSize: '1.5rem', margin: 0 }}>إبداع الخليج</h1>
         </Link>
 
