@@ -13,8 +13,8 @@ export default function Sidebar() {
         
         {/* Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none' }}>
-          {/* We will assume the logo is saved as public/logo.png */}
-          <img src="/logo.png" alt="شعار إبداع الخليج" style={{ height: '50px', objectFit: 'contain' }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+          {/* We generated a golden SVG logo */}
+          <img src="/logo.svg" alt="شعار إبداع الخليج" style={{ height: '50px', objectFit: 'contain' }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
           <h1 className="text-gradient" style={{ fontSize: '1.5rem', margin: 0 }}>إبداع الخليج</h1>
         </Link>
 
@@ -66,18 +66,18 @@ export default function Sidebar() {
 
           <h3 style={{ color: 'var(--text-primary)', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem', marginBottom: '1rem' }}>خدماتنا</h3>
           <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <li>✅ استشارات مجانية للجميع وفي كافة المجالات الجامعية.</li>
-            <li>✅ قادرون على عمل أبحاث ومشاريع مهما كانت.</li>
-            <li>✅ تعديل كافة رسائل الماجستير والدكتوراة مهما كانت اللغة.</li>
-            <li>✅ إنهاء جميع الإجراءات والخدمات داخل الجامعات العامة.</li>
-            <li>✅ إنهاء وحل جميع الواجبات الدراسية مع أفضل الكوادر.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.2rem' }}>•</span> استشارات مجانية للجميع وفي كافة المجالات الجامعية.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.2rem' }}>•</span> قادرون على عمل أبحاث ومشاريع مهما كانت.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.2rem' }}>•</span> تعديل كافة رسائل الماجستير والدكتوراة مهما كانت اللغة.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.2rem' }}>•</span> إنهاء جميع الإجراءات والخدمات داخل الجامعات العامة.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.2rem' }}>•</span> إنهاء وحل جميع الواجبات الدراسية مع أفضل الكوادر.</li>
             
             <li style={{ marginTop: '1rem', fontWeight: 'bold', color: 'var(--accent-primary)' }}>نساعدك وبقوة في:</li>
-            <li>🎓 رسائل دكتوراه (إنجليزي / عربي) جميع التخصصات.</li>
-            <li>🎓 رسائل ماجستير (إنجليزي / عربي) جميع التخصصات.</li>
-            <li>🎓 أبحاث لجميع التخصصات.</li>
-            <li>🎓 المساعدة في حل الواجبات.</li>
-            <li>🎓 إنهاء جميع تصديقات التقارير والوثائق الجامعية.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: '#fbbf24', fontSize: '1.2rem' }}>•</span> رسائل دكتوراه (إنجليزي / عربي) جميع التخصصات.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: '#fbbf24', fontSize: '1.2rem' }}>•</span> رسائل ماجستير (إنجليزي / عربي) جميع التخصصات.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: '#fbbf24', fontSize: '1.2rem' }}>•</span> أبحاث لجميع التخصصات.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: '#fbbf24', fontSize: '1.2rem' }}>•</span> المساعدة في حل الواجبات.</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: '#fbbf24', fontSize: '1.2rem' }}>•</span> إنهاء جميع تصديقات التقارير والوثائق الجامعية.</li>
           </ul>
 
           <h3 style={{ color: 'var(--text-primary)', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem', marginTop: '2rem', marginBottom: '1rem' }}>وكيل معتمد لتصديق المعاملات</h3>

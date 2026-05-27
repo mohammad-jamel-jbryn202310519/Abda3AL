@@ -40,6 +40,14 @@ export default function Home() {
             </div>
           </Link>
 
+          <Link href="/requirements" style={{ textDecoration: 'none' }}>
+            <div className="card" style={{ cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 2rem' }}>
+              <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>📄</div>
+              <h3 className="text-gradient" style={{ fontSize: '2rem' }}>الوثائق المطلوبة</h3>
+              <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>تعرف على متطلبات التسجيل لمرحلتي البكالوريوس والماجستير.</p>
+            </div>
+          </Link>
+
         </div>
       </div>
     </main>

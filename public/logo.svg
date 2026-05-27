@@ -1,0 +1,50 @@
+<svg xmlns="http://www.开展.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="50%" stop-color="#B8860B" />
+      <stop offset="100%" stop-color="#DAA520" />
+    </linearGradient>
+    <linearGradient id="goldLight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCEABB" />
+      <stop offset="100%" stop-color="#F8B500" />
+    </linearGradient>
+  </defs>
+
+  <!-- Laurel Wreaths -->
+  <path d="M 80,250 C 80,120 180,50 250,50 C 180,50 100,120 100,250 C 100,380 180,450 250,450 C 180,450 80,380 80,250 Z" fill="url(#gold)" />
+  <path d="M 420,250 C 420,120 320,50 250,50 C 320,50 400,120 400,250 C 400,380 320,450 250,450 C 320,450 420,380 420,250 Z" fill="url(#gold)" />
+  
+  <!-- Leaves Left -->
+  <path d="M 100,250 Q 80,230 110,210 Q 120,240 100,250" fill="url(#goldLight)" />
+  <path d="M 90,200 Q 70,180 110,160 Q 110,190 90,200" fill="url(#goldLight)" />
+  <path d="M 95,150 Q 80,130 120,110 Q 115,140 95,150" fill="url(#goldLight)" />
+  <path d="M 115,100 Q 105,80 145,70 Q 135,100 115,100" fill="url(#goldLight)" />
+  
+  <!-- Leaves Right -->
+  <path d="M 400,250 Q 420,230 390,210 Q 380,240 400,250" fill="url(#goldLight)" />
+  <path d="M 410,200 Q 430,180 390,160 Q 390,190 410,200" fill="url(#goldLight)" />
+  <path d="M 405,150 Q 420,130 380,110 Q 385,140 405,150" fill="url(#goldLight)" />
+  <path d="M 385,100 Q 395,80 355,70 Q 365,100 385,100" fill="url(#goldLight)" />
+
+  <!-- Globe / Earth -->
+  <circle cx="250" cy="280" r="80" fill="none" stroke="url(#gold)" stroke-width="6" />
+  <path d="M 250,200 C 200,200 170,280 250,360 C 300,280 300,200 250,200 Z" fill="none" stroke="url(#goldLight)" stroke-width="4" />
+  <path d="M 170,280 Q 250,250 330,280" fill="none" stroke="url(#goldLight)" stroke-width="4" />
+  <path d="M 180,240 Q 250,220 320,240" fill="none" stroke="url(#goldLight)" stroke-width="4" />
+  <path d="M 180,320 Q 250,340 320,320" fill="none" stroke="url(#goldLight)" stroke-width="4" />
+
+  <!-- Graduation Cap -->
+  <path d="M 250,120 L 150,170 L 250,220 L 350,170 Z" fill="url(#gold)" />
+  <path d="M 170,180 L 170,210 C 170,240 330,240 330,210 L 330,180 Z" fill="url(#goldLight)" />
+  
+  <!-- Tassel -->
+  <path d="M 250,170 L 320,210 L 320,240" fill="none" stroke="url(#gold)" stroke-width="6" />
+  <circle cx="320" cy="245" r="8" fill="url(#goldLight)" />
+
+  <!-- Banner / Ribbon -->
+  <path d="M 120,400 Q 250,380 380,400 L 380,440 Q 250,420 120,440 Z" fill="url(#gold)" />
+  <path d="M 120,400 L 90,390 L 110,420 L 90,450 L 120,440 Z" fill="url(#goldLight)" />
+  <path d="M 380,400 L 410,390 L 390,420 L 410,450 L 380,440 Z" fill="url(#goldLight)" />
+  
+</svg>
