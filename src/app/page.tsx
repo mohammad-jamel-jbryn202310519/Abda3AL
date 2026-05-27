@@ -1,9 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import Sidebar from '@/components/Sidebar';
 
 export default function Home() {
   return (
-    <main className="main-content">
+    <>
+      <Sidebar />
+      <main className="main-content">
       <div className="bg-glow"></div>
       
       <div className="container">
@@ -40,5 +43,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   );
 }
