@@ -81,7 +81,7 @@ export default async function PublicUniversityDetailPage({ params }: { params: P
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-        <Link href={`/universities/${university.type}`} className="btn btn-secondary">&larr; العودة للقائمة</Link>
+        <Link href={`/universities/list/${university.type}`} className="btn btn-secondary">&larr; العودة للقائمة</Link>
       </div>
 
     </main>

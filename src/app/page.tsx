@@ -24,7 +24,7 @@ export default function Home() {
 
         <div className="animate-fade-in delay-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem', textAlign: 'center' }}>
           
-          <Link href="/universities/public" style={{ textDecoration: 'none' }}>
+          <Link href="/universities/list/public" style={{ textDecoration: 'none' }}>
             <div className="card" style={{ cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 2rem' }}>
               <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🏛️</div>
               <h3 className="text-gradient" style={{ fontSize: '2rem' }}>الجامعات الحكومية</h3>
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link href="/universities/private" style={{ textDecoration: 'none' }}>
+          <Link href="/universities/list/private" style={{ textDecoration: 'none' }}>
             <div className="card" style={{ cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 2rem' }}>
               <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎓</div>
               <h3 className="text-gradient" style={{ fontSize: '2rem' }}>الجامعات الخاصة</h3>
