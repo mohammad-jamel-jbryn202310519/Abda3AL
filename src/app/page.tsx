@@ -24,7 +24,7 @@ export default async function Home() {
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
-          backgroundImage: 'url(/hero-bg-4.png)',
+          backgroundImage: 'url(/hero-bg-5.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center 15%', // Adjusted to ensure the head is not cropped at the top
           zIndex: -2
