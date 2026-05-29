@@ -13,29 +13,31 @@ export default function UniversitiesHubPage() {
         اختر مسارك الأكاديمي
       </h1>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center', maxWidth: '500px', margin: '0 auto' }}>
         
-        <Link href="/universities/list/private" style={{ textDecoration: 'none' }}>
-          <div className="card" style={{ cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3rem 2rem' }}>
-            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎓</div>
-            <h3 className="text-gradient" style={{ fontSize: '1.8rem' }}>الجامعات الخاصة</h3>
-            <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>تعرف على أفضل الجامعات الخاصة الرائدة والمميزة في الأردن.</p>
+        <Link href="/universities/list/private" style={{ textDecoration: 'none', width: '100%' }}>
+          <div className="card" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1.5rem' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🎓</div>
+            <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>الجامعات الخاصة</h3>
+            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.9rem' }}>أفضل الجامعات الخاصة الرائدة والمميزة.</p>
           </div>
         </Link>
 
-        <Link href="/universities/list/public" style={{ textDecoration: 'none' }}>
-          <div className="card" style={{ cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3rem 2rem' }}>
-            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🏛️</div>
-            <h3 className="text-gradient" style={{ fontSize: '1.8rem' }}>الجامعات الحكومية</h3>
-            <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>استكشف أعرق الجامعات الحكومية الأردنية والتخصصات المتاحة فيها.</p>
+        <Link href="/universities/list/public" style={{ textDecoration: 'none', width: '100%' }}>
+          <div className="card" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1.5rem' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🏛️</div>
+            <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>الجامعات الحكومية</h3>
+            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.9rem' }}>أعرق الجامعات الأردنية وتخصصاتها.</p>
           </div>
         </Link>
 
-        <Link href="/requirements" style={{ textDecoration: 'none' }}>
-          <div className="card" style={{ cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3rem 2rem' }}>
-            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>📄</div>
-            <h3 className="text-gradient" style={{ fontSize: '1.8rem' }}>الوثائق المطلوبة</h3>
-            <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>تعرف على متطلبات التسجيل لمرحلتي البكالوريوس والماجستير.</p>
+        <div style={{ width: '80%', height: '2px', backgroundColor: 'var(--border-color)', margin: '1rem 0' }}></div>
+
+        <Link href="/requirements" style={{ textDecoration: 'none', width: '100%' }}>
+          <div className="card" style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1.5rem', backgroundColor: 'var(--bg-secondary)' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>📄</div>
+            <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>الوثائق المطلوبة</h3>
+            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.9rem' }}>متطلبات التسجيل للبكالوريوس والماجستير.</p>
           </div>
         </Link>
       </div>

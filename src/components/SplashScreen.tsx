@@ -42,17 +42,16 @@ export default function SplashScreen() {
       pointerEvents: isFading ? 'none' : 'all',
     }}>
       <style dangerouslySetInnerHTML={{__html: `
-        @keyframes smoothPulse {
-          0% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); transform: scale(0.98); opacity: 0.8; }
-          50% { filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.8)); transform: scale(1.05); opacity: 1; }
-          100% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); transform: scale(0.98); opacity: 0.8; }
+        @keyframes gentleFadeIn {
+          0% { opacity: 0; filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.2)); }
+          100% { opacity: 1; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6)); }
         }
         .splash-logo-anim {
-          animation: smoothPulse 1s ease-in-out infinite;
+          animation: gentleFadeIn 0.8s ease-out forwards;
           width: 250px;
           height: 250px;
           object-fit: contain;
-          border-radius: 50%; /* Crop the square into a circle */
+          border-radius: 50%;
           mix-blend-mode: multiply;
         }
       `}} />

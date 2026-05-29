@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'عن الشركة | إبداع الخليج',
+  title: 'من نحن ؟ | إبداع الخليج',
   description: 'تعرف على شركة إبداع الخليج والخدمات الاستشارية والجامعية التي نقدمها',
 };
 
@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <main className="container" style={{ paddingTop: '8rem', paddingBottom: '4rem', minHeight: '100vh' }}>
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>عن شركة إبداع الخليج وخدماتنا</h1>
+        <h1 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>من نحن ؟</h1>
         <div style={{ width: '80px', height: '4px', backgroundColor: 'var(--accent-primary)', margin: '0 auto', borderRadius: '2px' }}></div>
       </div>
 
@@ -53,7 +53,10 @@ export default function AboutPage() {
       <div style={{ textAlign: 'center' }}>
         <div style={{ display: 'inline-block', padding: '1.5rem 3rem', border: '2px solid var(--accent-primary)', borderRadius: 'var(--radius-lg)', backgroundColor: 'var(--bg-primary)', boxShadow: 'var(--shadow-md)' }}>
           <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>إدارة وتأسيس</h3>
-          <p style={{ fontSize: '1.8rem', fontWeight: 'bold', margin: 0, color: 'var(--accent-secondary)' }}>المستشار التعليمي / ثامر الحمايدة</p>
+          <p style={{ fontSize: '1.8rem', fontWeight: 'bold', margin: '0 0 1rem 0', color: 'var(--accent-secondary)' }}>المستشار الأكاديمي / ثامر الحمايدة</p>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.5' }}>
+            موقع الشركة: الأردن - عمان - أبو نصير - مقابل البنك العربي الإسلامي - مجمع حجازين الطابق 4
+          </p>
         </div>
       </div>
       

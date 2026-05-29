@@ -27,7 +27,7 @@ export default function Navbar() {
       {/* Desktop Links */}
       <div style={{ display: 'none', gap: '2rem', alignItems: 'center' }} className="desktop-menu">
         <Link href="/" style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none' }}>الرئيسية</Link>
-        <Link href="/about" style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none' }}>عن الشركة</Link>
+        <Link href="/about" style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none' }}>من نحن ؟</Link>
         <Link href="/universities" style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none' }}>الجامعات</Link>
         <Link href="/requirements" style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none' }}>التسجيل</Link>
       </div>
@@ -59,7 +59,7 @@ export default function Navbar() {
       {isOpen && (
         <div style={{ position: 'absolute', top: '100%', left: 0, right: 0, backgroundColor: 'var(--bg-primary)', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem', borderBottom: '1px solid var(--border-color)', boxShadow: 'var(--shadow-md)', zIndex: 200 }}>
           <Link href="/" onClick={() => setIsOpen(false)} style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none', padding: '0.5rem', borderBottom: '1px solid var(--border-color)' }}>🏠 الرئيسية</Link>
-          <Link href="/about" onClick={() => setIsOpen(false)} style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none', padding: '0.5rem', borderBottom: '1px solid var(--border-color)' }}>🏢 عن الشركة</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)} style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none', padding: '0.5rem', borderBottom: '1px solid var(--border-color)' }}>🏢 من نحن ؟</Link>
           <Link href="/universities" onClick={() => setIsOpen(false)} style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none', padding: '0.5rem', borderBottom: '1px solid var(--border-color)' }}>🎓 الجامعات</Link>
           <Link href="/requirements" onClick={() => setIsOpen(false)} style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none', padding: '0.5rem' }}>📄 التسجيل</Link>
         </div>
