@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function RegistrationModal({ universities }: { universities: any[] }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -130,6 +131,13 @@ export default function RegistrationModal({ universities }: { universities: any[
               <div style={{ textAlign: 'center', marginBottom: '2rem', padding: '1rem', backgroundColor: 'var(--bg-secondary)', borderRadius: 'var(--radius-md)' }}>
                 <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>الجامعة المختارة:</p>
                 <h3 style={{ fontSize: '1.3rem', color: 'var(--accent-primary)', marginBottom: '1rem' }}>{selectedUni.name}</h3>
+                <Link 
+                  href={`/universities/${selectedUni.id}`} 
+                  onClick={() => setIsOpen(false)}
+                  style={{ display: 'block', color: 'var(--accent-secondary)', textDecoration: 'underline', marginBottom: '1rem', fontSize: '1rem' }}
+                >
+                  يفضل الذهاب لرؤية تفاصيل الجامعة
+                </Link>
                 <button onClick={() => setSelectedUni(null)} style={{ background: 'none', border: 'none', color: 'red', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.9rem' }}>تغيير الجامعة</button>
               </div>
             )}
