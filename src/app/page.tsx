@@ -53,15 +53,15 @@ export default function Home() {
               }}>
                 سجل الآن
               </a>
-              <Link href="/requirements" className="btn" style={{ 
+              <a href="#universities" className="btn" style={{ 
                 backgroundColor: 'transparent', 
                 color: 'white', 
                 border: '2px solid white',
                 padding: '0.8rem 2rem', 
                 fontSize: '1rem'
               }}>
-                الوثائق المطلوبة
-              </Link>
+                اختار الجامعة
+              </a>
             </div>
           </div>
         </div>

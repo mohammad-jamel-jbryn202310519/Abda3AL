@@ -1,5 +1,6 @@
 import { createClient } from '@/utils/supabase/server'
 import Link from 'next/link'
+import UniversitiesSearchGrid from '@/components/UniversitiesSearchGrid'
 
 export default async function PublicUniversitiesPage({ params }: { params: Promise<{ type: string }> }) {
   const resolvedParams = await params;
@@ -41,31 +42,7 @@ export default async function PublicUniversitiesPage({ params }: { params: Promi
           <p>سيقوم فريق إبداع الخليج بإضافتها قريباً عبر لوحة التحكم.</p>
         </div>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-          {universities?.map((uni) => (
-            <Link key={uni.id} href={`/universities/${uni.id}`} style={{ textDecoration: 'none' }}>
-              <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', padding: '1.5rem', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, padding: '0.5rem 1rem', backgroundColor: 'var(--accent-primary)', color: 'white', fontWeight: 'bold', borderBottomRightRadius: 'var(--radius-md)' }}>
-                  #{uni.ranking}
-                </div>
-                
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '120px', marginBottom: '1.5rem', marginTop: '1.5rem' }}>
-                  {uni.logo_url ? (
-                    <img src={uni.logo_url} alt={`شعار ${uni.name}`} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
-                  ) : (
-                    <div style={{ fontSize: '4rem', opacity: 0.5 }}>{icon}</div>
-                  )}
-                </div>
-                
-                <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--text-primary)', textAlign: 'center', flexGrow: 1 }}>{uni.name}</h3>
-                
-                <div style={{ textAlign: 'center' }}>
-                  <span style={{ color: 'var(--accent-secondary)', fontSize: '0.9rem', fontWeight: 'bold' }}>عرض التفاصيل والتخصصات &larr;</span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <UniversitiesSearchGrid universities={universities || []} icon={icon} />
       )}
 
       <div style={{ textAlign: 'center', marginTop: '4rem' }}>
