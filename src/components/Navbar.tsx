@@ -22,7 +22,6 @@ export default function Navbar() {
       {/* Logo & Title */}
       <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
         <img src="/logo.png" alt="شعار إبداع الخليج" style={{ height: '40px', width: '40px', objectFit: 'contain', borderRadius: '50%', mixBlendMode: 'multiply' }} />
-        <h1 className="text-gradient" style={{ fontSize: '1rem', margin: 0, fontWeight: 'bold', whiteSpace: 'nowrap' }}>إبداع الخليج</h1>
       </Link>
 
       {/* Desktop Links */}

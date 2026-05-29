@@ -25,12 +25,11 @@ export default function RegistrationModal({ universities }: { universities: any[
         onClick={() => setIsOpen(true)}
         className="btn" 
         style={{ 
-          backgroundColor: 'white', 
-          color: 'var(--text-primary)', 
+          backgroundColor: 'transparent', 
+          color: 'white', 
+          border: '2px solid white',
           padding: '0.8rem 2rem', 
           fontSize: '1rem',
-          boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
-          border: 'none',
           cursor: 'pointer'
         }}
       >
@@ -76,54 +75,64 @@ export default function RegistrationModal({ universities }: { universities: any[
             </button>
             
             <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--text-primary)', textAlign: 'center' }}>
-              يرجى اختيار الجامعة التي ترغب فيها أولاً
+              يجب اختيار الجامعة أولاً
             </h2>
             
-            <input 
-              type="text" 
-              placeholder="🔍 ابحث عن اسم الجامعة..." 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '1rem',
-                fontSize: '1rem',
-                borderRadius: 'var(--radius-md)',
-                border: '2px solid var(--border-color)',
-                marginBottom: '1rem',
-                outline: 'none'
-              }}
-            />
+            {!selectedUni ? (
+              <>
+                <input 
+                  type="text" 
+                  placeholder="🔍 ابحث عن اسم الجامعة..." 
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '1rem',
+                    fontSize: '1rem',
+                    borderRadius: 'var(--radius-md)',
+                    border: '2px solid var(--border-color)',
+                    marginBottom: '1rem',
+                    outline: 'none'
+                  }}
+                />
 
-            <div style={{
-              flexGrow: 1,
-              overflowY: 'auto',
-              border: '1px solid var(--border-color)',
-              borderRadius: 'var(--radius-md)',
-              marginBottom: '1.5rem',
-              maxHeight: '300px'
-            }}>
-              {filteredUniversities?.length === 0 ? (
-                <div style={{ padding: '1rem', textAlign: 'center', color: 'var(--text-secondary)' }}>لا يوجد نتائج</div>
-              ) : (
-                filteredUniversities?.map(uni => (
-                  <div 
-                    key={uni.id}
-                    onClick={() => setSelectedUni(uni)}
-                    style={{
-                      padding: '1rem',
-                      borderBottom: '1px solid var(--border-color)',
-                      cursor: 'pointer',
-                      backgroundColor: selectedUni?.id === uni.id ? 'var(--accent-primary)' : 'transparent',
-                      color: selectedUni?.id === uni.id ? 'white' : 'var(--text-primary)',
-                      transition: 'background-color 0.2s'
-                    }}
-                  >
-                    {uni.name}
-                  </div>
-                ))
-              )}
-            </div>
+                <div style={{
+                  flexGrow: 1,
+                  overflowY: 'auto',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--radius-md)',
+                  marginBottom: '1.5rem',
+                  maxHeight: '300px'
+                }}>
+                  {filteredUniversities?.length === 0 ? (
+                    <div style={{ padding: '1rem', textAlign: 'center', color: 'var(--text-secondary)' }}>لا يوجد نتائج</div>
+                  ) : (
+                    filteredUniversities?.map(uni => (
+                      <div 
+                        key={uni.id}
+                        onClick={() => setSelectedUni(uni)}
+                        style={{
+                          padding: '1rem',
+                          borderBottom: '1px solid var(--border-color)',
+                          cursor: 'pointer',
+                          backgroundColor: 'transparent',
+                          color: 'var(--text-primary)',
+                          transition: 'background-color 0.2s'
+                        }}
+                      >
+                        {uni.name}
+                      </div>
+                    ))
+                  )}
+                </div>
+              </>
+            ) : (
+              <div style={{ textAlign: 'center', marginBottom: '2rem', padding: '1rem', backgroundColor: 'var(--bg-secondary)', borderRadius: 'var(--radius-md)' }}>
+                <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>الجامعة المختارة:</p>
+                <h3 style={{ fontSize: '1.3rem', color: 'var(--accent-primary)', marginBottom: '1rem' }}>{selectedUni.name}</h3>
+                <button onClick={() => setSelectedUni(null)} style={{ background: 'none', border: 'none', color: 'red', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.9rem' }}>تغيير الجامعة</button>
+              </div>
+            )}
 
             {selectedUni && (
               <button 

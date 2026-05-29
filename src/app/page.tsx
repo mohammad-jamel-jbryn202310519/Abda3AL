@@ -50,11 +50,12 @@ export default async function Home() {
             <div className="animate-fade-in delay-2" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <RegistrationModal universities={universities || []} />
               <Link href="/universities" className="btn" style={{ 
-                backgroundColor: 'transparent', 
-                color: 'white', 
-                border: '2px solid white',
+                backgroundColor: 'white', 
+                color: 'var(--text-primary)', 
+                border: 'none',
                 padding: '0.8rem 2rem', 
-                fontSize: '1rem'
+                fontSize: '1rem',
+                boxShadow: '0 5px 15px rgba(0,0,0,0.2)'
               }}>
                 اختار الجامعة
               </Link>
