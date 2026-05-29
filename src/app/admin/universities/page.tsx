@@ -1,5 +1,6 @@
 import { createClient } from '@/utils/supabase/server'
 import Link from 'next/link'
+import { deleteUniversity } from './actions'
 
 export default async function UniversitiesPage() {
   const supabase = await createClient()
@@ -58,8 +59,12 @@ export default async function UniversitiesPage() {
                       {uni.type === 'public' ? 'حكومية' : 'خاصة'}
                     </span>
                   </td>
-                  <td style={{ padding: '1rem' }}>
-                    <Link href={`/admin/universities/${uni.id}`} style={{ color: 'var(--accent-primary)', marginLeft: '1rem' }}>تعديل</Link>
+                  <td style={{ padding: '1rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                    <Link href={`/admin/universities/${uni.id}`} className="btn btn-secondary" style={{ padding: '0.25rem 0.5rem', fontSize: '0.9rem' }}>تعديل</Link>
+                    <form action={deleteUniversity} style={{ margin: 0 }}>
+                      <input type="hidden" name="id" value={uni.id} />
+                      <button type="submit" style={{ padding: '0.25rem 0.5rem', fontSize: '0.9rem', backgroundColor: 'rgba(255, 0, 0, 0.1)', color: '#ff4d4d', border: '1px solid rgba(255, 0, 0, 0.2)', borderRadius: 'var(--radius-sm)', cursor: 'pointer' }}>حذف</button>
+                    </form>
                   </td>
                 </tr>
               ))

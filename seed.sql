@@ -1,3 +1,9 @@
+-- Fix Permissions First!
+GRANT ALL ON public.universities TO anon, authenticated, service_role;
+GRANT ALL ON public.specialties TO anon, authenticated, service_role;
+GRANT ALL ON public.required_documents TO anon, authenticated, service_role;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO anon, authenticated, service_role;
+
 -- Public Universities
 INSERT INTO public.universities (name, type, ranking, description) VALUES
 ('الجامعة الأردنية (عمان)', 'public', 1, 'جامعة حكومية أردنية معتمدة.'),

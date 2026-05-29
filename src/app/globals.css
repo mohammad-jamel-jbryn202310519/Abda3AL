@@ -1,14 +1,14 @@
 :root {
-  /* Color Palette - Premium Dark Theme */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #13131a;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0b0;
-  --accent-primary: #6366f1; /* Indigo */
-  --accent-secondary: #8b5cf6; /* Violet */
-  --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  --border-color: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(19, 19, 26, 0.7);
+  /* Color Palette - Premium Light/Gold Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --accent-primary: #d4af37; /* Classic Gold */
+  --accent-secondary: #b8860b; /* Dark Goldenrod */
+  --accent-gradient: linear-gradient(135deg, var(--accent-primary), #ffd700); /* Gold Gradient */
+  --border-color: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.85);
   
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -18,9 +18,9 @@
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-full: 9999px;
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.3); /* Gold Glow */
   
   /* Transitions */
   --transition-fast: 0.15s ease;
@@ -52,8 +52,12 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
 
 .text-gradient {
   background: var(--accent-gradient);
@@ -65,9 +69,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Layout */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px; /* Reduced from 1200 */
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .main-content {
@@ -89,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(-50%, -50%);
   width: 60vw;
   height: 60vw;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(10, 10, 15, 0) 70%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
   z-index: 0;
   pointer-events: none;
 }
@@ -99,10 +103,10 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.2rem; /* Reduced padding */
   border-radius: var(--radius-full);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem; /* Reduced font size */
   cursor: pointer;
   transition: all var(--transition-normal);
   border: none;
@@ -111,13 +115,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
   background: var(--accent-gradient);
-  color: white;
+  color: white; /* Will change this to a darker color for gold if needed, but white on rich gold looks okay */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
   box-shadow: var(--shadow-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
 }
 
 .btn-secondary {
@@ -128,8 +133,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
 
@@ -138,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 2rem;
+  padding: 1.5rem; /* Reduced from 2rem */
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-md);
 }
@@ -155,6 +160,11 @@ h1, h2, h3, h4, h5, h6 {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
@@ -168,23 +178,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 1rem;
   }
   
-  h1 {
-    font-size: 2.5rem !important;
-  }
-  
-  h2 {
-    font-size: 1.8rem !important;
-  }
-  
-  h3 {
-    font-size: 1.5rem !important;
-  }
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.2rem !important; }
 
   .card {
-    padding: 1.5rem;
+    padding: 1rem; /* Reduced padding */
   }
 
   .main-content {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 }
