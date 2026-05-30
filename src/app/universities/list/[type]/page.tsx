@@ -26,7 +26,7 @@ export default async function PublicUniversitiesPage({ params }: { params: Promi
   )
 
   return (
-    <main className="container night-light-bg" style={{ padding: '4rem 1rem' }}>
+    <main className="container" style={{ padding: '4rem 1rem' }}>
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <h1 className="text-gradient" style={{ fontSize: '3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
           {icon} {title}

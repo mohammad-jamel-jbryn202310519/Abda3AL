@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function UniversitiesHubPage() {
   return (
-    <main className="container night-light-bg" style={{ paddingTop: '8rem', paddingBottom: '4rem', minHeight: '100vh' }}>
+    <main className="container" style={{ paddingTop: '8rem', paddingBottom: '4rem', minHeight: '100vh' }}>
       <h1 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '3rem', color: 'var(--text-primary)' }}>
         اختر مسارك الأكاديمي
       </h1>

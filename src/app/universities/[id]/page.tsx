@@ -28,7 +28,7 @@ export default async function PublicUniversityDetailPage({ params }: { params: P
     .order('created_at', { ascending: true })
 
   return (
-    <main className="container night-light-bg" style={{ padding: '4rem 1rem' }}>
+    <main className="container" style={{ padding: '4rem 1rem' }}>
       
       {/* University Header */}
       <div className="card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '3rem' }}>
