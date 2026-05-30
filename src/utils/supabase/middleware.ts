@@ -53,7 +53,16 @@ export async function updateSession(request: NextRequest) {
     return supabaseResponse;
   } catch (error) {
     console.error('Middleware Error:', error);
-    // Fallback: allow the request to proceed if middleware fails (e.g. missing env variables)
+    
+    // Security fallback: if Supabase fails (e.g., missing env vars or network error),
+    // DO NOT allow access to /admin routes. Redirect to login.
+    if (request.nextUrl.pathname.startsWith('/admin') && !request.nextUrl.pathname.startsWith('/admin/login')) {
+      const url = request.nextUrl.clone();
+      url.pathname = '/admin/login';
+      return NextResponse.redirect(url);
+    }
+
+    // For public routes, allow the request to proceed so the site doesn't go down
     return NextResponse.next({
       request,
     });
