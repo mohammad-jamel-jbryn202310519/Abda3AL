@@ -42,7 +42,7 @@ export default function UniversitiesSearchGrid({ universities, icon }: { univers
       }}>
         {filteredUniversities?.map((uni) => (
           <Link key={uni.id} href={`/universities/${uni.id}`} style={{ textDecoration: 'none' }}>
-            <div className="animated-border-card" style={{ height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+            <div className={uni.type === 'private' ? 'animated-border-card-private' : 'animated-border-card-public'} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, padding: '0.2rem 0.6rem', backgroundColor: 'var(--accent-primary)', color: 'white', fontWeight: 'bold', borderBottomRightRadius: 'var(--radius-md)', fontSize: '0.8rem', zIndex: 10 }}>
                 #{uni.ranking}
               </div>
