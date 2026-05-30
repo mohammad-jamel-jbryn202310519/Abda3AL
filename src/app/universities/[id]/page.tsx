@@ -36,7 +36,13 @@ export default async function PublicUniversityDetailPage({ params }: { params: P
           {university.logo_url ? (
             <img src={university.logo_url} alt={university.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           ) : (
-            <div style={{ fontSize: '5rem', lineHeight: '130px' }}>{university.type === 'public' ? '🏛️' : '🎓'}</div>
+            <div style={{ color: 'var(--accent-primary)', opacity: 0.6, display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+              {university.type === 'public' ? (
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="10" width="16" height="10" rx="2" ry="2"/><path d="M12 10V4"/><path d="M8 4h8"/><path d="M4 22h16"/></svg>
+              ) : (
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              )}
+            </div>
           )}
         </div>
         <h1 className="text-gradient" style={{ fontSize: '3rem', marginBottom: '1rem' }}>{university.name}</h1>
@@ -129,7 +135,8 @@ export default async function PublicUniversityDetailPage({ params }: { params: P
               marginTop: '1rem'
             }}
           >
-            📍 عرض موقع الجامعة على الخريطة
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '0.5rem' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            عرض موقع الجامعة على الخريطة
           </a>
         </div>
       </div>

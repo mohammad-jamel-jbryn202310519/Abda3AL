@@ -140,18 +140,59 @@ h3 { font-size: 1.3rem; }
 
 /* Cards */
 .card {
-  background: var(--bg-secondary);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 1.5rem; /* Reduced from 2rem */
-  transition: all var(--transition-normal);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  position: relative;
 }
 
 .card:hover {
-  border-color: var(--accent-primary);
   transform: translateY(-5px);
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* Animated Border Card */
+.animated-border-card {
+  position: relative;
+  background: var(--glass-bg);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.animated-border-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: calc(var(--radius-lg) + 2px);
+  background: conic-gradient(from 0deg, transparent 0%, transparent 80%, var(--accent-primary) 100%);
+  animation: spin-border 4s linear infinite;
+}
+
+.animated-border-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+}
+
+@keyframes spin-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Animations */

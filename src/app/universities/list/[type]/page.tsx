@@ -19,13 +19,17 @@ export default async function PublicUniversitiesPage({ params }: { params: Promi
     .order('ranking', { ascending: true })
 
   const title = type === 'public' ? 'الجامعات الحكومية الأردنية' : 'الجامعات الخاصة الأردنية'
-  const icon = type === 'public' ? '🏛️' : '🎓'
+  const icon = type === 'public' ? (
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent-primary)' }}><rect x="4" y="10" width="16" height="10" rx="2" ry="2"/><path d="M12 10V4"/><path d="M8 4h8"/><path d="M4 22h16"/></svg>
+  ) : (
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent-primary)' }}><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+  )
 
   return (
     <main className="container" style={{ padding: '4rem 1rem' }}>
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <h1 className="text-gradient" style={{ fontSize: '3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-          <span>{icon}</span> {title}
+          {icon} {title}
         </h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
           اختر الجامعة التي تناسب طموحك، ونحن في شركة إبداع الخليج سنتكفل بكافة إجراءات القبول والتسجيل الخاصة بك.
