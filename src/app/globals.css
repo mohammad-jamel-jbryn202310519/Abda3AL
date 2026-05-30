@@ -162,6 +162,7 @@ h3 { font-size: 1.3rem; }
   background-color: var(--bg-primary); /* Dark base */
   overflow: hidden;
   min-height: 100vh;
+  z-index: 1; /* Ensure it creates a stacking context */
 }
 
 .night-light-bg::before {
@@ -171,16 +172,17 @@ h3 { font-size: 1.3rem; }
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, rgba(99, 102, 241, 0.03) 30%, transparent 60%);
-  animation: slow-pan-light 15s ease-in-out infinite alternate;
-  z-index: -1;
+  /* Increased opacity to make it clearly visible but still elegant */
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, rgba(99, 102, 241, 0.1) 30%, transparent 60%);
+  animation: slow-pan-light 10s ease-in-out infinite alternate;
+  z-index: -1; /* Goes behind the content but above the parent's background color */
   pointer-events: none;
 }
 
 @keyframes slow-pan-light {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(5%, 5%) scale(1.1); }
-  100% { transform: translate(-5%, -5%) scale(1); }
+  50% { transform: translate(3%, 3%) scale(1.05); }
+  100% { transform: translate(-3%, -3%) scale(1); }
 }
 
 /* Animations */
