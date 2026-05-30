@@ -1,30 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+
 :root {
-  /* Color Palette - Premium Light/Gold Theme */
+  /* Color Palette - Premium Modern Theme */
   --bg-primary: #ffffff;
-  --bg-secondary: #fafafa;
-  --text-primary: #1a1a1a;
-  --text-secondary: #666666;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
   --accent-primary: #d4af37; /* Classic Gold */
-  --accent-secondary: #b8860b; /* Dark Goldenrod */
-  --accent-gradient: linear-gradient(135deg, var(--accent-primary), #ffd700); /* Gold Gradient */
-  --border-color: rgba(0, 0, 0, 0.08);
-  --glass-bg: rgba(255, 255, 255, 0.85);
+  --accent-secondary: #0f172a; /* Deep Navy Black */
+  --accent-gradient: linear-gradient(135deg, var(--accent-primary), #ffd700);
+  --border-color: rgba(15, 23, 42, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
   
   /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Tajawal', system-ui, -apple-system, sans-serif;
   
   /* Spacing & Utilities */
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
   --radius-full: 9999px;
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-  --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.3); /* Gold Glow */
+  --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.3);
   
   /* Transitions */
   --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -41,6 +46,7 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden;
+  direction: rtl; /* Enforce RTL for Arabic */
 }
 
 a {
@@ -156,7 +162,49 @@ h3 { font-size: 1.3rem; }
   border-color: rgba(212, 175, 55, 0.4);
 }
 
+}
 
+/* Modern Form & Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-xl);
+}
+
+.input-modern {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.input-modern:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+.input-modern::placeholder {
+  color: #94a3b8;
+}
+
+.label-modern {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
 
 /* Animations */
 @keyframes fadeIn {
