@@ -162,6 +162,10 @@ h3 { font-size: 1.3rem; }
   border-color: rgba(212, 175, 55, 0.4);
 }
 
+.btn-glass:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
 /* Modern Form & Glassmorphism Utilities */
 .glass-panel {
   background: var(--glass-bg);

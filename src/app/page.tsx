@@ -60,7 +60,7 @@ export default async function Home() {
                   boxShadow: '0 10px 25px rgba(212, 175, 55, 0.4)'
                 }}
               />
-              <Link href="/universities" style={{ 
+              <Link href="/universities" className="btn-glass" style={{ 
                 backgroundColor: 'rgba(255,255,255,0.1)', 
                 color: 'white', 
                 border: '1px solid rgba(255,255,255,0.3)',
@@ -70,10 +70,7 @@ export default async function Home() {
                 borderRadius: 'var(--radius-full)',
                 backdropFilter: 'blur(10px)',
                 transition: 'var(--transition-normal)'
-              }}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
-              >
+              }}>
                 تصفح الجامعات
               </Link>
             </div>
