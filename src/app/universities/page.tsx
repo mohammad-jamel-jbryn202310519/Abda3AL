@@ -9,7 +9,7 @@ export const metadata = {
 export default function UniversitiesHubPage() {
   return (
     <main className="container" style={{ paddingTop: '8rem', paddingBottom: '4rem', minHeight: '100vh' }}>
-      <h1 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '3rem', color: 'var(--text-primary)' }}>
+      <h1 style={{ fontSize: '2rem', textAlign: 'center', marginBottom: '3rem', color: 'var(--text-primary)' }}>
         اختر مسارك الأكاديمي
       </h1>
 
@@ -31,8 +31,8 @@ export default function UniversitiesHubPage() {
             <div style={{ marginBottom: '1rem', color: 'var(--accent-primary)' }}>
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', color: 'white', fontWeight: 'bold' }}>الجامعات الخاصة</h3>
-            <p style={{ color: '#cbd5e1', margin: 0, fontSize: '1rem' }}>أفضل الجامعات الخاصة الرائدة والمميزة.</p>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'white', fontWeight: 'bold' }}>الجامعات الخاصة</h3>
+            <p style={{ color: '#cbd5e1', margin: 0, fontSize: '0.9rem' }}>أفضل الجامعات الخاصة الرائدة والمميزة.</p>
           </div>
         </Link>
 
@@ -52,8 +52,8 @@ export default function UniversitiesHubPage() {
             <div style={{ marginBottom: '1rem', color: 'var(--accent-primary)' }}>
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="10" width="16" height="10" rx="2" ry="2"/><path d="M12 10V4"/><path d="M8 4h8"/><path d="M4 22h16"/></svg>
             </div>
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', color: 'white', fontWeight: 'bold' }}>الجامعات الحكومية</h3>
-            <p style={{ color: '#cbd5e1', margin: 0, fontSize: '1rem' }}>أعرق الجامعات الأردنية وتخصصاتها.</p>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'white', fontWeight: 'bold' }}>الجامعات الحكومية</h3>
+            <p style={{ color: '#cbd5e1', margin: 0, fontSize: '0.9rem' }}>أعرق الجامعات الأردنية وتخصصاتها.</p>
           </div>
         </Link>
 
@@ -64,8 +64,8 @@ export default function UniversitiesHubPage() {
             <div style={{ marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>الوثائق المطلوبة</h3>
-            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.9rem' }}>متطلبات التسجيل للبكالوريوس والماجستير.</p>
+            <h3 className="text-gradient" style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>الوثائق المطلوبة</h3>
+            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.85rem' }}>متطلبات التسجيل للبكالوريوس والماجستير.</p>
           </div>
         </Link>
       </div>

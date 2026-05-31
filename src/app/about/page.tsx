@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <main className="container" style={{ paddingTop: '8rem', paddingBottom: '4rem', minHeight: '100vh' }}>
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>من نحن ؟</h1>
+        <h1 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '1rem' }}>من نحن ؟</h1>
         <div style={{ width: '80px', height: '4px', backgroundColor: 'var(--accent-primary)', margin: '0 auto', borderRadius: '2px' }}></div>
       </div>
 

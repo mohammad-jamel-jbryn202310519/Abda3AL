@@ -60,7 +60,7 @@ export default async function Home() {
                 </Link>
                 <Link href="/universities" className="btn" style={{ 
                   backgroundColor: 'white', 
-                  color: 'var(--text-primary)', 
+                  color: '#1a1a1a', 
                   border: 'none',
                   padding: '0.8rem 2rem', 
                   fontSize: '1rem',
