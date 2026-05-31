@@ -6,6 +6,13 @@ export const metadata = {
   description: 'تعرف على شركة إبداع الخليج والخدمات الاستشارية والجامعية التي نقدمها',
 };
 
+const CheckIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, color: 'var(--accent-primary)' }}>
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M9 12l2 2 4-4"></path>
+  </svg>
+);
+
 export default function AboutPage() {
   return (
     <main className="container" style={{ paddingTop: '8rem', paddingBottom: '4rem', minHeight: '100vh' }}>
@@ -19,9 +26,9 @@ export default function AboutPage() {
         <div className="card" style={{ padding: '2rem', backgroundColor: 'var(--bg-secondary)', borderRadius: 'var(--radius-md)' }}>
           <h3 style={{ fontSize: '1.5rem', color: 'var(--accent-primary)', marginBottom: '1.5rem', borderBottom: '2px solid var(--border-color)', paddingBottom: '0.5rem' }}>استشارات وخدمات عامة</h3>
           <ul style={{ listStyleType: 'none', padding: 0, margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-            <li style={{ marginBottom: '1rem' }}>✅ استشارات مجانية للجميع.</li>
-            <li style={{ marginBottom: '1rem' }}>✅ نفيدكم في جميع الاستشارات العامة حول الجامعات وأي خدمات مهما كانت.</li>
-            <li style={{ marginBottom: '1rem' }}>✅ إنهاء جميع الإجراءات والخدمات داخل الجامعات عامة.</li>
+            <li style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>استشارات مجانية للجميع.</span></li>
+            <li style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>نفيدكم في جميع الاستشارات العامة حول الجامعات وأي خدمات مهما كانت.</span></li>
+            <li style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>إنهاء جميع الإجراءات والخدمات داخل الجامعات عامة.</span></li>
           </ul>
         </div>
 
@@ -29,10 +36,10 @@ export default function AboutPage() {
         <div className="card" style={{ padding: '2rem', backgroundColor: 'var(--bg-secondary)', borderRadius: 'var(--radius-md)' }}>
           <h3 style={{ fontSize: '1.5rem', color: 'var(--accent-primary)', marginBottom: '1.5rem', borderBottom: '2px solid var(--border-color)', paddingBottom: '0.5rem' }}>الأبحاث والرسائل الأكاديمية</h3>
           <ul style={{ listStyleType: 'none', padding: 0, margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-            <li style={{ marginBottom: '1rem' }}>✅ قادرين على عمل أبحاث ومشاريع بكافة أنواعها وجميع التخصصات.</li>
-            <li style={{ marginBottom: '1rem' }}>✅ رسائل دكتوراه (إنجليزي / عربي) لجميع التخصصات.</li>
-            <li style={{ marginBottom: '1rem' }}>✅ رسائل ماجستير (إنجليزي / عربي) لجميع التخصصات مع تعديل كافة الرسائل مهما كانت اللغة.</li>
-            <li style={{ marginBottom: '1rem' }}>✅ إنهاء وحل جميع الواجبات الدراسية خلال الفصل الدراسي مع أفضل الكوادر.</li>
+            <li style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>قادرين على عمل أبحاث ومشاريع بكافة أنواعها وجميع التخصصات.</span></li>
+            <li style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>رسائل دكتوراه (إنجليزي / عربي) لجميع التخصصات.</span></li>
+            <li style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>رسائل ماجستير (إنجليزي / عربي) لجميع التخصصات مع تعديل كافة الرسائل مهما كانت اللغة.</span></li>
+            <li style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>إنهاء وحل جميع الواجبات الدراسية خلال الفصل الدراسي مع أفضل الكوادر.</span></li>
           </ul>
         </div>
 
@@ -41,11 +48,11 @@ export default function AboutPage() {
           <h3 style={{ fontSize: '1.5rem', color: 'var(--accent-primary)', marginBottom: '1.5rem', borderBottom: '2px solid var(--border-color)', paddingBottom: '0.5rem' }}>التصديقات والأوراق الرسمية</h3>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>نحن <strong>وكيل معتمد</strong> لكافة الأوراق الرسمية وتصديق المعاملات وإنهاء جميع تصديقات التقارير والوثائق الجامعية من:</p>
           <ul style={{ listStyleType: 'none', padding: 0, margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-            <li style={{ marginBottom: '0.5rem' }}>🔹 وزارة الخارجية</li>
-            <li style={{ marginBottom: '0.5rem' }}>🔹 السفارة المعنية</li>
-            <li style={{ marginBottom: '0.5rem' }}>🔹 التعليم العالي</li>
-            <li style={{ marginBottom: '0.5rem' }}>🔹 الشهادة الثانوية</li>
-            <li style={{ marginBottom: '0.5rem' }}>🔹 جنسية الطالب</li>
+            <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>وزارة الخارجية</span></li>
+            <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>السفارة المعنية</span></li>
+            <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>التعليم العالي</span></li>
+            <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>الشهادة الثانوية</span></li>
+            <li style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}><CheckIcon /> <span>جنسية الطالب</span></li>
           </ul>
         </div>
       </div>

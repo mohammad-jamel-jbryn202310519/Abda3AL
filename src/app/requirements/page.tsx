@@ -1,6 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 
+const CheckIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, color: 'var(--accent-primary)' }}>
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M9 12l2 2 4-4"></path>
+  </svg>
+);
+
 export default function RequirementsPage() {
   return (
     <main className="container" style={{ padding: '4rem 1rem' }}>
@@ -17,12 +24,12 @@ export default function RequirementsPage() {
         <div className="card" style={{ display: 'flex', flexDirection: 'column' }}>
           <h3 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '1.5rem', textAlign: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>البكالوريوس</h3>
           <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.5rem' }}>📄</span> ملف لشهادة الثانوية أو المرحلة السابقة</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.5rem' }}>📄</span> ملف لصورة الجواز</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.5rem' }}>📄</span> ملف لصورة الهوية الوطنية</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.5rem' }}>📄</span> ملف لصورة القبول الجامعي</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.5rem' }}>📄</span> ملف لصورة الجدول الدراسي</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: 'var(--accent-primary)', fontSize: '1.5rem' }}>📄</span> ملف لصورة ختم الجواز</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لشهادة الثانوية أو المرحلة السابقة</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة الجواز</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة الهوية الوطنية</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة القبول الجامعي</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة الجدول الدراسي</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة ختم الجواز</li>
           </ul>
         </div>
 
@@ -30,12 +37,12 @@ export default function RequirementsPage() {
         <div className="card" style={{ display: 'flex', flexDirection: 'column' }}>
           <h3 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '1.5rem', textAlign: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>الماجستير</h3>
           <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: '#fbbf24', fontSize: '1.5rem' }}>📄</span> ملف لشهادة البكالوريوس</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: '#fbbf24', fontSize: '1.5rem' }}>📄</span> ملف لصورة الجواز</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: '#fbbf24', fontSize: '1.5rem' }}>📄</span> ملف لصورة الهوية الوطنية</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: '#fbbf24', fontSize: '1.5rem' }}>📄</span> ملف لصورة القبول الجامعي</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: '#fbbf24', fontSize: '1.5rem' }}>📄</span> ملف لصورة الجدول الدراسي</li>
-            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><span style={{ color: '#fbbf24', fontSize: '1.5rem' }}>📄</span> ملف لصورة ختم الجواز</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لشهادة البكالوريوس</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة الجواز</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة الهوية الوطنية</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة القبول الجامعي</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة الجدول الدراسي</li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة ختم الجواز</li>
           </ul>
         </div>
 

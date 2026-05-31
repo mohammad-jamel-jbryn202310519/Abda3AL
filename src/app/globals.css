@@ -9,6 +9,7 @@
   --accent-gradient: linear-gradient(135deg, var(--accent-primary), #ffd700); /* Gold Gradient */
   --border-color: rgba(0, 0, 0, 0.08);
   --glass-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg: rgba(255, 255, 255, 0.65);
   
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -25,6 +26,16 @@
   /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(30, 30, 30, 0.85);
+  --nav-bg: rgba(18, 18, 18, 0.75);
 }
 
 * {
