@@ -40,7 +40,7 @@ export default async function Home() {
         {/* Hero Content */}
         <div className="container" style={{ zIndex: 1, color: 'white', paddingTop: '70px', display: 'flex', justifyContent: 'center' }}>
           <div style={{ maxWidth: '700px' }}>
-            <h1 className="animate-fade-in" style={{ fontSize: '2.5rem', marginBottom: '1rem', textShadow: '0 2px 5px rgba(0,0,0,0.8)', color: 'white', lineHeight: '1.2' }}>
+            <h1 className="animate-fade-in" style={{ fontSize: '2rem', marginBottom: '1rem', textShadow: '0 2px 5px rgba(0,0,0,0.8)', color: 'white', lineHeight: '1.2' }}>
               مستقبلك يبدأ هنا
             </h1>
             <p className="animate-fade-in delay-1" style={{ fontSize: '1.1rem', marginBottom: '1.5rem', textShadow: '0 1px 3px rgba(0,0,0,0.8)', color: '#f0f0f0', lineHeight: '1.5' }}>

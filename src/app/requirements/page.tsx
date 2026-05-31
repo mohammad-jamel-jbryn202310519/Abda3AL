@@ -12,17 +12,17 @@ export default function RequirementsPage() {
   return (
     <main className="container" style={{ padding: '4rem 1rem' }}>
       <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
-        <h1 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '1rem' }}>شركة إبداع الخليج للخدمات الطلابية</h1>
+        <h1 className="text-gradient" style={{ marginBottom: '1rem' }}>شركة إبداع الخليج للخدمات الطلابية</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>للدراسة في أفضل الجامعات بكالوريوس - ماجستير - دكتوراه</p>
       </div>
 
-      <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: 'var(--text-primary)', fontSize: '1.5rem' }}>متطلبات التقديم السفير لمرحلتي الماجستير والبكالوريوس</h2>
+      <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: 'var(--text-primary)' }}>متطلبات التقديم السفير لمرحلتي الماجستير والبكالوريوس</h2>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
         
         {/* Bachelor Requirements */}
         <div className="card" style={{ display: 'flex', flexDirection: 'column' }}>
-          <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '1.5rem', textAlign: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>البكالوريوس</h3>
+          <h3 className="text-gradient" style={{ marginBottom: '1.5rem', textAlign: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>البكالوريوس</h3>
           <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لشهادة الثانوية أو المرحلة السابقة</li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة الجواز</li>
@@ -35,7 +35,7 @@ export default function RequirementsPage() {
 
         {/* Master Requirements */}
         <div className="card" style={{ display: 'flex', flexDirection: 'column' }}>
-          <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '1.5rem', textAlign: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>الماجستير</h3>
+          <h3 className="text-gradient" style={{ marginBottom: '1.5rem', textAlign: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>الماجستير</h3>
           <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لشهادة البكالوريوس</li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><CheckIcon /> ملف لصورة الجواز</li>
@@ -49,7 +49,7 @@ export default function RequirementsPage() {
       </div>
 
       <div className="card" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', backgroundColor: 'rgba(99, 102, 241, 0.05)', border: '1px solid var(--accent-primary)' }}>
-        <h3 className="text-gradient" style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>وكيل معتمد لكافة الأوراق الرسمية</h3>
+        <h3 className="text-gradient" style={{ marginBottom: '1rem' }}>وكيل معتمد لكافة الأوراق الرسمية</h3>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>تقوم شركة إبداع الخليج بتصديق كافة المعاملات من الجهات التالية:</p>
         
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>

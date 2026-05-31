@@ -46,7 +46,7 @@ export default async function PublicUniversityDetailPage({ params }: { params: P
             </div>
           )}
         </div>
-        <h1 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '1rem' }}>{university.name}</h1>
+        <h1 className="text-gradient" style={{ marginBottom: '1rem' }}>{university.name}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '800px' }}>{university.description}</p>
         <span style={{ marginTop: '1rem', padding: '0.5rem 1rem', borderRadius: 'var(--radius-full)', backgroundColor: 'rgba(99, 102, 241, 0.2)', color: '#818cf8', fontWeight: 'bold' }}>
           الترتيب المحلي: #{university.ranking}
@@ -54,7 +54,7 @@ export default async function PublicUniversityDetailPage({ params }: { params: P
       </div>
 
       {/* Specialties / Prices Section */}
-      <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '2rem' }}>التخصصات والأسعار</h2>
+      <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>التخصصات والأسعار</h2>
       
       {specialties && specialties.length > 0 ? (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '4rem', maxWidth: '800px', margin: '0 auto 4rem auto' }}>
@@ -83,7 +83,7 @@ export default async function PublicUniversityDetailPage({ params }: { params: P
 
       {/* Action Area */}
       <div className="card" style={{ textAlign: 'center', backgroundColor: 'rgba(139, 92, 246, 0.05)', border: '1px solid var(--accent-secondary)' }}>
-        <h3 className="text-gradient" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>هل ترغب بالتسجيل في هذه الجامعة؟</h3>
+        <h3 className="text-gradient" style={{ marginBottom: '1rem' }}>هل ترغب بالتسجيل في هذه الجامعة؟</h3>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '1.2rem' }}>
           نحن في شركة إبداع الخليج نتكفل بجميع إجراءات قبولك وتسجيلك رسمياً.
         </p>
