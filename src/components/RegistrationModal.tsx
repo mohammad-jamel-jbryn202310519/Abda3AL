@@ -25,7 +25,6 @@ export default function RegistrationModal({
   const [country, setCountry] = useState('');
   const [phone, setPhone] = useState('');
 
-  // Handle Initial University (if embedded in a university details page)
   useEffect(() => {
     if (initialUniId && universities?.length > 0) {
       const uni = universities.find(u => u.id === initialUniId);
@@ -64,17 +63,34 @@ export default function RegistrationModal({
     setIsOpen(false);
   };
 
-  const defaultBtnStyle = { 
+  const defaultBtnStyle: React.CSSProperties = { 
     backgroundColor: 'var(--accent-primary)', 
     color: 'white', 
     border: 'none',
     padding: '0.8rem 2rem', 
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     fontWeight: 'bold',
     cursor: 'pointer',
-    borderRadius: 'var(--radius-full)',
-    boxShadow: 'var(--shadow-md)',
-    transition: 'var(--transition-normal)'
+    borderRadius: 'var(--radius-md)',
+    boxShadow: 'var(--shadow-sm)'
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '0.8rem',
+    fontSize: '0.95rem',
+    borderRadius: 'var(--radius-sm)',
+    border: '1px solid var(--border-color)',
+    outline: 'none',
+    backgroundColor: '#fff'
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '0.9rem',
+    fontWeight: 'bold',
+    marginBottom: '0.4rem',
+    color: 'var(--text-secondary)'
   };
 
   return (
@@ -82,8 +98,6 @@ export default function RegistrationModal({
       <button 
         onClick={() => setIsOpen(true)}
         style={{ ...defaultBtnStyle, ...buttonStyle }}
-        onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-        onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
       >
         {buttonText}
       </button>
@@ -92,87 +106,83 @@ export default function RegistrationModal({
         <div style={{
           position: 'fixed',
           top: 0, left: 0, right: 0, bottom: 0,
-          backgroundColor: 'rgba(15, 23, 42, 0.6)',
-          backdropFilter: 'blur(8px)',
+          backgroundColor: 'rgba(0,0,0,0.8)',
           zIndex: 9999,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '1rem',
-          animation: 'fadeIn 0.3s ease'
+          animation: 'fadeIn 0.2s ease'
         }}>
-          <div className="glass-panel" style={{
+          <div style={{
+            backgroundColor: 'var(--bg-primary)',
+            borderRadius: 'var(--radius-md)',
             width: '100%',
-            maxWidth: '600px',
-            padding: '2.5rem',
+            maxWidth: '450px', // Smaller box
+            padding: '2rem',
             position: 'relative',
             maxHeight: '90vh',
             overflowY: 'auto',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            boxShadow: 'var(--shadow-md)'
           }}>
             <button 
               onClick={() => setIsOpen(false)}
               style={{
                 position: 'absolute',
-                top: '20px',
-                right: '20px',
-                background: 'rgba(0,0,0,0.05)',
+                top: '15px',
+                right: '15px',
+                background: 'transparent',
                 border: 'none',
-                width: '36px', height: '36px',
-                borderRadius: '50%',
-                fontSize: '1.2rem',
+                fontSize: '1.5rem',
                 cursor: 'pointer',
-                color: 'var(--text-secondary)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                transition: 'var(--transition-fast)'
+                color: 'var(--text-secondary)'
               }}
-              onMouseOver={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.1)'}
-              onMouseOut={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.05)'}
             >
               ✕
             </button>
             
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <h2 style={{ fontSize: '1.8rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-                نموذج التسجيل الجامعي
+            <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <h2 style={{ fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                طلب تسجيل
               </h2>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
-                أدخل بياناتك وسيقوم المستشار التعليمي بالتواصل معك لاستكمال إجراءات القبول.
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                أدخل بياناتك وسيتواصل معك المستشار.
               </p>
             </div>
             
-            <form onSubmit={handleSend} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+            <form onSubmit={handleSend} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               
               {/* Step 1: Select University */}
               {!initialUniId && (
                 <div>
-                  <label className="label-modern">الجامعة التي ترغب بالتسجيل فيها <span style={{color:'red'}}>*</span></label>
+                  <label style={labelStyle}>الجامعة المطلوبة <span style={{color:'red'}}>*</span></label>
                   {!selectedUni ? (
                     <div style={{ position: 'relative' }}>
                       <input 
                         type="text" 
-                        placeholder="ابحث عن اسم الجامعة..." 
+                        placeholder="ابحث عن الجامعة..." 
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="input-modern"
+                        style={inputStyle}
                       />
                       {searchTerm && (
                         <div style={{
                           position: 'absolute', top: '100%', left: 0, right: 0,
                           background: 'white', border: '1px solid var(--border-color)',
-                          borderRadius: 'var(--radius-md)', marginTop: '0.5rem',
-                          maxHeight: '200px', overflowY: 'auto', zIndex: 10,
-                          boxShadow: 'var(--shadow-lg)'
+                          borderRadius: 'var(--radius-sm)', marginTop: '0.2rem',
+                          maxHeight: '150px', overflowY: 'auto', zIndex: 10,
+                          boxShadow: 'var(--shadow-sm)'
                         }}>
                           {filteredUniversities?.length === 0 ? (
-                            <div style={{ padding: '1rem', textAlign: 'center', color: 'var(--text-secondary)' }}>لا يوجد نتائج</div>
+                            <div style={{ padding: '0.8rem', textAlign: 'center', color: 'var(--text-secondary)' }}>لا يوجد</div>
                           ) : (
                             filteredUniversities?.map(uni => (
                               <div 
                                 key={uni.id}
                                 onClick={() => { setSelectedUni(uni); setSearchTerm(''); }}
-                                style={{ padding: '0.8rem 1rem', borderBottom: '1px solid var(--border-color)', cursor: 'pointer' }}
+                                style={{ padding: '0.6rem 0.8rem', borderBottom: '1px solid var(--border-color)', cursor: 'pointer', fontSize: '0.9rem' }}
                               >
                                 {uni.name}
                               </div>
@@ -182,22 +192,22 @@ export default function RegistrationModal({
                       )}
                     </div>
                   ) : (
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem', background: 'rgba(212, 175, 55, 0.1)', borderRadius: 'var(--radius-md)', border: '1px solid var(--accent-primary)' }}>
-                      <span style={{ fontWeight: 'bold', color: 'var(--accent-secondary)' }}>{selectedUni.name}</span>
-                      <button type="button" onClick={() => setSelectedUni(null)} style={{ background: 'none', border: 'none', color: 'red', textDecoration: 'underline', cursor: 'pointer' }}>تغيير</button>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.8rem', backgroundColor: 'var(--bg-secondary)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }}>
+                      <span style={{ fontWeight: 'bold', fontSize: '0.95rem' }}>{selectedUni.name}</span>
+                      <button type="button" onClick={() => setSelectedUni(null)} style={{ background: 'none', border: 'none', color: 'red', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.85rem' }}>تغيير</button>
                     </div>
                   )}
                 </div>
               )}
 
               {/* Step 2: Details */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
                 <div>
-                  <label className="label-modern">الدرجة العلمية <span style={{color:'red'}}>*</span></label>
+                  <label style={labelStyle}>الدرجة العلمية <span style={{color:'red'}}>*</span></label>
                   <select 
                     value={degree} 
                     onChange={(e) => setDegree(e.target.value)}
-                    className="input-modern"
+                    style={inputStyle}
                   >
                     <option value="بكالوريوس">بكالوريوس</option>
                     <option value="ماجستير">ماجستير</option>
@@ -206,63 +216,61 @@ export default function RegistrationModal({
                   </select>
                 </div>
                 <div>
-                  <label className="label-modern">التخصص المطلوب</label>
+                  <label style={labelStyle}>التخصص المطلوب</label>
                   <input 
                     type="text" 
                     value={specialty} 
                     onChange={(e) => setSpecialty(e.target.value)} 
-                    placeholder="مثال: الطب البشري، هندسة برمجيات" 
-                    className="input-modern"
+                    placeholder="مثال: طب، هندسة" 
+                    style={inputStyle}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="label-modern">الاسم الرباعي <span style={{color:'red'}}>*</span></label>
+                <label style={labelStyle}>الاسم الرباعي <span style={{color:'red'}}>*</span></label>
                 <input 
                   type="text" 
                   value={name} 
                   onChange={(e) => setName(e.target.value)} 
-                  placeholder="الاسم الكامل كما في الجواز" 
-                  className="input-modern"
+                  placeholder="الاسم الكامل" 
+                  style={inputStyle}
                   required
                 />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
                 <div>
-                  <label className="label-modern">الجنسية</label>
+                  <label style={labelStyle}>الجنسية</label>
                   <input 
                     type="text" 
                     value={nationality} 
                     onChange={(e) => setNationality(e.target.value)} 
-                    placeholder="مثال: أردني، سعودي..." 
-                    className="input-modern"
+                    placeholder="مثال: أردني" 
+                    style={inputStyle}
                   />
                 </div>
                 <div>
-                  <label className="label-modern">دولة الإقامة</label>
+                  <label style={labelStyle}>دولة الإقامة</label>
                   <input 
                     type="text" 
                     value={country} 
                     onChange={(e) => setCountry(e.target.value)} 
-                    placeholder="مكان إقامتك الحالي" 
-                    className="input-modern"
+                    placeholder="دولة الإقامة" 
+                    style={inputStyle}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="label-modern">رقم التواصل (مع رمز الدولة) <span style={{color:'red'}}>*</span></label>
+                <label style={labelStyle}>رقم التواصل <span style={{color:'red'}}>*</span></label>
                 <input 
                   type="tel" 
                   value={phone} 
                   onChange={(e) => setPhone(e.target.value)} 
                   placeholder="+962 7X XXX XXXX" 
-                  className="input-modern"
+                  style={{ ...inputStyle, textAlign: 'left', direction: 'ltr' }}
                   required
-                  dir="ltr"
-                  style={{ textAlign: 'right' }}
                 />
               </div>
 
@@ -270,27 +278,23 @@ export default function RegistrationModal({
                 type="submit"
                 style={{
                   width: '100%',
-                  padding: '1.2rem',
+                  padding: '1rem',
                   backgroundColor: '#25D366',
                   color: 'white',
                   border: 'none',
-                  borderRadius: 'var(--radius-full)',
-                  fontSize: '1.2rem',
+                  borderRadius: 'var(--radius-sm)',
+                  fontSize: '1.1rem',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '0.8rem',
-                  boxShadow: '0 4px 15px rgba(37, 211, 102, 0.3)',
-                  marginTop: '1rem',
-                  transition: 'var(--transition-normal)'
+                  gap: '0.5rem',
+                  marginTop: '0.5rem'
                 }}
-                onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-3px)'}
-                onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
-                إرسال طلب التسجيل عبر واتساب
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                إرسال عبر واتساب
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
               </button>
             </form>
           </div>

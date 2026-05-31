@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <main style={{ height: '100vh', overflow: 'hidden', margin: 0, padding: 0 }}>
       
-      {/* Modern Hero Section */}
+      {/* Hero Section */}
       <section style={{ 
         position: 'relative', 
         height: '100%', 
@@ -20,59 +20,68 @@ export default async function Home() {
         textAlign: 'center',
         overflow: 'hidden'
       }}>
-        {/* Background Image */}
+        {/* Background Image with Overlay */}
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
           backgroundImage: 'url(/hero-bg-5.png)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 15%',
-          zIndex: -2,
-          filter: 'brightness(0.9) contrast(1.1)'
+          backgroundPosition: 'center 15%', // Adjusted to ensure the head is not cropped at the top
+          zIndex: -2
         }}></div>
-        
-        {/* Modern Gradient Overlay */}
+        {/* Lighter global overlay */}
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
-          background: 'linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.8))',
+          backgroundColor: 'rgba(0,0,0,0.2)',
           zIndex: -1
         }}></div>
 
         {/* Hero Content */}
         <div className="container" style={{ zIndex: 1, color: 'white', paddingTop: '70px', display: 'flex', justifyContent: 'center' }}>
-          <div className="glass-panel animate-fade-in" style={{ maxWidth: '800px', padding: '3rem 2rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-            <h1 style={{ fontSize: '3rem', marginBottom: '1.5rem', color: 'white', lineHeight: '1.3', fontWeight: '800' }}>
-              مستقبلك الأكاديمي يبدأ من <span className="text-gradient">إبداع الخليج</span>
+          <div style={{ maxWidth: '700px' }}>
+            <h1 className="animate-fade-in" style={{ fontSize: '2.5rem', marginBottom: '1rem', textShadow: '0 2px 5px rgba(0,0,0,0.8)', color: 'white', lineHeight: '1.2' }}>
+              مستقبلك يبدأ هنا
             </h1>
-            <p className="delay-1" style={{ fontSize: '1.2rem', marginBottom: '2.5rem', color: '#e2e8f0', lineHeight: '1.8', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
-              نحن نرعى التفوق الأكاديمي ونضمن لك قبولك الجامعي. نسهل عليك كافة الإجراءات لتبدأ رحلتك التعليمية في الأردن بكل ثقة واحترافية.
+            <p className="animate-fade-in delay-1" style={{ fontSize: '1.1rem', marginBottom: '1.5rem', textShadow: '0 1px 3px rgba(0,0,0,0.8)', color: '#f0f0f0', lineHeight: '1.5' }}>
+              في شركة إبداع الخليج، نحن نرعى التفوق الأكاديمي. نضمن لك قبولك الجامعي ونسهل عليك كافة الإجراءات لتبدأ رحلتك التعليمية في الأردن بكل ثقة.
             </p>
             
-            <div className="delay-2" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="animate-fade-in delay-2" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link href="/about" className="btn" style={{ 
+                  backgroundColor: 'transparent', 
+                  color: 'white', 
+                  border: '2px solid white',
+                  padding: '0.8rem 2rem', 
+                  fontSize: '1rem'
+                }}>
+                  من نحن
+                </Link>
+                <Link href="/universities" className="btn" style={{ 
+                  backgroundColor: 'white', 
+                  color: 'var(--text-primary)', 
+                  border: 'none',
+                  padding: '0.8rem 2rem', 
+                  fontSize: '1rem',
+                  boxShadow: '0 5px 15px rgba(0,0,0,0.2)'
+                }}>
+                  اختار الجامعة
+                </Link>
+              </div>
+
               <RegistrationModal 
                 universities={universities || []} 
-                buttonText="أرغب في التسجيل الآن"
+                buttonText="أرغب في التسجيل الآن" 
                 buttonStyle={{
-                  padding: '1rem 3rem',
-                  fontSize: '1.2rem',
-                  borderRadius: 'var(--radius-full)',
-                  boxShadow: '0 10px 25px rgba(212, 175, 55, 0.4)'
+                  width: '100%', 
+                  maxWidth: '350px',
+                  padding: '1rem',
+                  fontSize: '1.1rem',
+                  backgroundColor: 'var(--accent-primary)',
+                  boxShadow: '0 4px 15px rgba(212, 175, 55, 0.4)'
                 }}
               />
-              <Link href="/universities" className="btn-glass" style={{ 
-                backgroundColor: 'rgba(255,255,255,0.1)', 
-                color: 'white', 
-                border: '1px solid rgba(255,255,255,0.3)',
-                padding: '1rem 3rem', 
-                fontSize: '1.2rem',
-                fontWeight: 'bold',
-                borderRadius: 'var(--radius-full)',
-                backdropFilter: 'blur(10px)',
-                transition: 'var(--transition-normal)'
-              }}>
-                تصفح الجامعات
-              </Link>
             </div>
           </div>
         </div>
