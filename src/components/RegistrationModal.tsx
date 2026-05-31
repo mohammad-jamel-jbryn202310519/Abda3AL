@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function RegistrationModal({ 
   universities, 
@@ -14,6 +15,7 @@ export default function RegistrationModal({
   buttonStyle?: React.CSSProperties
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   
   // Form State
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,6 +28,7 @@ export default function RegistrationModal({
   const [phone, setPhone] = useState('');
 
   useEffect(() => {
+    setMounted(true);
     if (initialUniId && universities?.length > 0) {
       const uni = universities.find(u => u.id === initialUniId);
       if (uni) setSelectedUni(uni);
@@ -82,7 +85,8 @@ export default function RegistrationModal({
     borderRadius: 'var(--radius-sm)',
     border: '1px solid var(--border-color)',
     outline: 'none',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    color: '#000' // Ensure text is visible
   };
 
   const labelStyle: React.CSSProperties = {
@@ -93,66 +97,62 @@ export default function RegistrationModal({
     color: 'var(--text-secondary)'
   };
 
-  return (
-    <>
-      <button 
-        onClick={() => setIsOpen(true)}
-        style={{ ...defaultBtnStyle, ...buttonStyle }}
-      >
-        {buttonText}
-      </button>
-
-      {isOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.8)',
-          zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '1rem',
-          animation: 'fadeIn 0.2s ease'
-        }}>
-          <div style={{
-            backgroundColor: 'var(--bg-primary)',
-            borderRadius: 'var(--radius-md)',
-            width: '100%',
-            maxWidth: '450px', // Smaller box
-            padding: '2rem',
-            position: 'relative',
-            maxHeight: '90vh',
-            overflowY: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-            boxShadow: 'var(--shadow-md)'
-          }}>
-            <button 
-              onClick={() => setIsOpen(false)}
-              style={{
-                position: 'absolute',
-                top: '15px',
-                right: '15px',
-                background: 'transparent',
-                border: 'none',
-                fontSize: '1.5rem',
-                cursor: 'pointer',
-                color: 'var(--text-secondary)'
-              }}
-            >
-              ✕
-            </button>
-            
-            <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-              <h2 style={{ fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-                طلب تسجيل
-              </h2>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                أدخل بياناتك وسيتواصل معك المستشار.
-              </p>
-            </div>
-            
-            <form onSubmit={handleSend} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+  const modalContent = isOpen ? (
+    <div style={{
+      position: 'fixed',
+      top: 0, left: 0, right: 0, bottom: 0,
+      width: '100vw', height: '100vh',
+      backgroundColor: 'rgba(0,0,0,0.5)', // Lighter overlay
+      backdropFilter: 'blur(5px)', // Add blur so it doesn't look like a solid black rectangle
+      WebkitBackdropFilter: 'blur(5px)',
+      zIndex: 99999, // Ensure it's on top of everything
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '1rem',
+      animation: 'fadeIn 0.2s ease'
+    }}>
+      <div style={{
+        backgroundColor: 'var(--bg-primary)',
+        color: 'var(--text-primary)', // Override white text from hero
+        borderRadius: 'var(--radius-md)',
+        width: '100%',
+        maxWidth: '450px',
+        padding: '2rem',
+        position: 'relative',
+        maxHeight: '90vh',
+        overflowY: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        boxShadow: 'var(--shadow-md)'
+      }}>
+        <button 
+          type="button"
+          onClick={() => setIsOpen(false)}
+          style={{
+            position: 'absolute',
+            top: '15px',
+            right: '15px',
+            background: 'transparent',
+            border: 'none',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            color: 'var(--text-secondary)'
+          }}
+        >
+          ✕
+        </button>
+        
+        <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+            طلب تسجيل
+          </h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+            أدخل بياناتك وسيتواصل معك المستشار.
+          </p>
+        </div>
+        
+        <form onSubmit={handleSend} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               
               {/* Step 1: Select University */}
               {!initialUniId && (
@@ -176,13 +176,13 @@ export default function RegistrationModal({
                           boxShadow: 'var(--shadow-sm)'
                         }}>
                           {filteredUniversities?.length === 0 ? (
-                            <div style={{ padding: '0.8rem', textAlign: 'center', color: 'var(--text-secondary)' }}>لا يوجد</div>
+                            <div style={{ padding: '0.8rem', textAlign: 'center', color: '#666' }}>لا يوجد</div>
                           ) : (
                             filteredUniversities?.map(uni => (
                               <div 
                                 key={uni.id}
                                 onClick={() => { setSelectedUni(uni); setSearchTerm(''); }}
-                                style={{ padding: '0.6rem 0.8rem', borderBottom: '1px solid var(--border-color)', cursor: 'pointer', fontSize: '0.9rem' }}
+                                style={{ padding: '0.6rem 0.8rem', borderBottom: '1px solid var(--border-color)', cursor: 'pointer', fontSize: '0.9rem', color: '#000' }}
                               >
                                 {uni.name}
                               </div>
@@ -193,7 +193,7 @@ export default function RegistrationModal({
                     </div>
                   ) : (
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.8rem', backgroundColor: 'var(--bg-secondary)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }}>
-                      <span style={{ fontWeight: 'bold', fontSize: '0.95rem' }}>{selectedUni.name}</span>
+                      <span style={{ fontWeight: 'bold', fontSize: '0.95rem', color: '#000' }}>{selectedUni.name}</span>
                       <button type="button" onClick={() => setSelectedUni(null)} style={{ background: 'none', border: 'none', color: 'red', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.85rem' }}>تغيير</button>
                     </div>
                   )}
@@ -235,7 +235,7 @@ export default function RegistrationModal({
                   onChange={(e) => setName(e.target.value)} 
                   placeholder="الاسم الكامل" 
                   style={inputStyle}
-                  required
+                  /* removed 'required' to prevent silent browser blocking */
                 />
               </div>
 
@@ -270,12 +270,13 @@ export default function RegistrationModal({
                   onChange={(e) => setPhone(e.target.value)} 
                   placeholder="+962 7X XXX XXXX" 
                   style={{ ...inputStyle, textAlign: 'left', direction: 'ltr' }}
-                  required
+                  /* removed 'required' */
                 />
               </div>
 
               <button 
-                type="submit"
+                type="button"
+                onClick={handleSend}
                 style={{
                   width: '100%',
                   padding: '1rem',
@@ -290,7 +291,8 @@ export default function RegistrationModal({
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '0.5rem',
-                  marginTop: '0.5rem'
+                  marginTop: '0.5rem',
+                  zIndex: 99
                 }}
               >
                 إرسال عبر واتساب
@@ -299,6 +301,21 @@ export default function RegistrationModal({
             </form>
           </div>
         </div>
+  ) : null;
+
+  return (
+    <>
+      <button 
+        type="button"
+        onClick={() => setIsOpen(true)}
+        style={{ ...defaultBtnStyle, ...buttonStyle }}
+      >
+        {buttonText}
+      </button>
+
+      {mounted && typeof document !== 'undefined' && createPortal(
+        modalContent,
+        document.body
       )}
     </>
   );
